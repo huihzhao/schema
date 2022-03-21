@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sample_module.sample_package;
+
+option go_package="github.com/sample_module/sample_package/grpc-go/stubs";
+
+
+service SayHi {
+    rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+
+message HelloRequest {
+    string msg = 1;
+}
+message HelloReply {
+    string msg = 1;
+    string code = 2;
+}
